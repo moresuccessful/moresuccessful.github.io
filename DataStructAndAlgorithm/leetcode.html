@@ -266,6 +266,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.5" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    树
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -349,6 +362,8 @@
 <li><a href="#96">96. &#x4E0D;&#x540C;&#x7684;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;</a></li>
 <li><a href="#153">153. &#x5BFB;&#x627E;&#x65CB;&#x8F6C;&#x6392;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;</a></li>
 <li><a href="#403">403. &#x9752;&#x86D9;&#x8FC7;&#x6CB3;</a></li>
+<li><a href="#794">794. &#x6709;&#x6548;&#x7684;&#x4E95;&#x5B57;&#x6E38;&#x620F;</a></li>
+<li><a href="#894">894. &#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x6EE1;&#x4E8C;&#x53C9;&#x6811;</a></li>
 <li><a href="#912">912. &#x6392;&#x5E8F;&#x6570;&#x7EC4;</a></li>
 <li><a href="#923">923. &#x4E09;&#x6570;&#x4E4B;&#x548C;&#x7684;&#x591A;&#x79CD;&#x53EF;&#x80FD;</a></li>
 <li><a href="#993">993. &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x5802;&#x5144;&#x5F1F;&#x8282;&#x70B9;</a></li>
@@ -469,6 +484,106 @@ func backTrace(nums []int, results *[][]int, start int){
         }
     }
     return false
+}
+</code></pre><h1 id="794-&#x6709;&#x6548;&#x7684;&#x4E95;&#x5B57;&#x6E38;&#x620F;"><a id="794" href="https://leetcode-cn.com/problems/valid-tic-tac-toe-state/" target="_blank">794. &#x6709;&#x6548;&#x7684;&#x4E95;&#x5B57;&#x6E38;&#x620F;</a></h1>
+<p>&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#x4F5C;&#x4E3A;&#x4E95;&#x5B57;&#x6E38;&#x620F;&#x7684;&#x6E38;&#x620F;&#x677F; board&#x3002;&#x5F53;&#x4E14;&#x4EC5;&#x5F53;&#x5728;&#x4E95;&#x5B57;&#x6E38;&#x620F;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x73A9;&#x5BB6;&#x6709;&#x53EF;&#x80FD;&#x5C06;&#x5B57;&#x7B26;&#x653E;&#x7F6E;&#x6210;&#x6E38;&#x620F;&#x677F;&#x6240;&#x663E;&#x793A;&#x7684;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x624D;&#x8FD4;&#x56DE; true&#x3002;&#x8BE5;&#x6E38;&#x620F;&#x677F;&#x662F;&#x4E00;&#x4E2A; 3 x 3 &#x6570;&#x7EC4;&#xFF0C;&#x7531;&#x5B57;&#x7B26; &quot; &quot;&#xFF0C;&quot;X&quot; &#x548C; &quot;O&quot; &#x7EC4;&#x6210;&#x3002;&#x5B57;&#x7B26; &quot; &quot; &#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x7A7A;&#x4F4D;&#x3002;
+&#x4EE5;&#x4E0B;&#x662F;&#x4E95;&#x5B57;&#x6E38;&#x620F;&#x7684;&#x89C4;&#x5219;&#xFF1A;
+&#x73A9;&#x5BB6;&#x8F6E;&#x6D41;&#x5C06;&#x5B57;&#x7B26;&#x653E;&#x5165;&#x7A7A;&#x4F4D;&#xFF08;&quot; &quot;&#xFF09;&#x4E2D;&#x3002;
+&#x7B2C;&#x4E00;&#x4E2A;&#x73A9;&#x5BB6;&#x603B;&#x662F;&#x653E;&#x5B57;&#x7B26; &#x201C;X&#x201D;&#xFF0C;&#x4E14;&#x7B2C;&#x4E8C;&#x4E2A;&#x73A9;&#x5BB6;&#x603B;&#x662F;&#x653E;&#x5B57;&#x7B26; &#x201C;O&#x201D;&#x3002;
+&#x201C;X&#x201D; &#x548C; &#x201C;O&#x201D; &#x53EA;&#x5141;&#x8BB8;&#x653E;&#x7F6E;&#x5728;&#x7A7A;&#x4F4D;&#x4E2D;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x5BF9;&#x5DF2;&#x653E;&#x6709;&#x5B57;&#x7B26;&#x7684;&#x4F4D;&#x7F6E;&#x8FDB;&#x884C;&#x586B;&#x5145;&#x3002;
+&#x5F53;&#x6709; 3 &#x4E2A;&#x76F8;&#x540C;&#xFF08;&#x4E14;&#x975E;&#x7A7A;&#xFF09;&#x7684;&#x5B57;&#x7B26;&#x586B;&#x5145;&#x4EFB;&#x4F55;&#x884C;&#x3001;&#x5217;&#x6216;&#x5BF9;&#x89D2;&#x7EBF;&#x65F6;&#xFF0C;&#x6E38;&#x620F;&#x7ED3;&#x675F;&#x3002;
+&#x5F53;&#x6240;&#x6709;&#x4F4D;&#x7F6E;&#x975E;&#x7A7A;&#x65F6;&#xFF0C;&#x4E5F;&#x7B97;&#x4E3A;&#x6E38;&#x620F;&#x7ED3;&#x675F;&#x3002;
+&#x5982;&#x679C;&#x6E38;&#x620F;&#x7ED3;&#x675F;&#xFF0C;&#x73A9;&#x5BB6;&#x4E0D;&#x5141;&#x8BB8;&#x518D;&#x653E;&#x7F6E;&#x5B57;&#x7B26;&#x3002;</p>
+<p><em>TAG&#xFF1A;&#x3010;&#x6570;&#x7EC4;&#x3011;&#x3010;&#x4E8C;&#x7EF4;&#x3011;</em> </p>
+<p>&#x672C;&#x9898;&#x5C31;&#x662F;&#x627E;&#x89C4;&#x5F8B;&#xFF0C;&#x5206;&#x4E00;&#x4E0B;3&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+<ol>
+<li>X&#x68CB;&#x5B50;&#x5148;&#x4E0B;&#xFF0C;&#x56E0;&#x6B64;X&#x7684;&#x6570;&#x91CF;&#x6BD4;O&#x591A;1&#x4E2A;&#xFF0C;&#x6216;&#x8005;&#x4E0E;O&#x76F8;&#x7B49;&#xFF0C;&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#x4E0D;&#x7B26;&#x5408;&#x6E38;&#x620F;&#x89C4;&#x5219;&#xFF0C;&#x8FD4;&#x56DE;false&#x3002;</li>
+<li>&#x5F53;X&#x6EE1;&#x8DB3;&#x8D62;&#x7684;&#x6761;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;X&#x6570;&#x91CF;&#x6BD4;O&#x591A;1&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;false&#x3002;</li>
+<li>&#x5F53;O&#x6EE1;&#x8DB3;&#x8D62;&#x7684;&#x6761;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;O&#x6570;&#x91CF;&#x548C;X&#x4E00;&#x6837;&#x591A;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;false&#x3002;</li>
+</ol>
+<pre><code>
+func validTicTacToe(board []string) bool {
+    cntO,cntX:=count(board)
+    if cntX-cntO!= 1 &amp;&amp; cntX-cntO!=0{ // &#x6761;&#x4EF6;1&#x5224;&#x65AD;
+        return false
+    }
+    if win(board,&apos;X&apos;) &amp;&amp; cntX-cntO!=1{ // &#x6761;&#x4EF6;2&#x5224;&#x65AD;
+        return false
+    }
+    if win(board,&apos;O&apos;) &amp;&amp; cntX!=cntO{ // &#x6761;&#x4EF6;3&#x5224;&#x65AD;
+        return false
+    }
+    return true
+}
+func count(board []string)(int,int){ // &#x83B7;&#x53D6;X&#x548C;O&#x68CB;&#x5B50;&#x7684;&#x4E2A;&#x6570;
+    var cntO, cntX int
+    for j := 0; j &lt; len(board); j++ {
+        for k := 0; k &lt; len(board[0]); k++ {
+            if board[j][k] == &apos;O&apos; {
+                cntO++
+            } else if board[j][k] == &apos;X&apos; {
+                cntX++
+            }
+        }
+    }
+    return cntO,cntX
+}
+func win(board []string, winner byte)bool{ // &#x5224;&#x65AD;&#x68CB;&#x5B50;winner&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x8D62;&#x7684;&#x6761;&#x4EF6;
+    for i:=0;i&lt;len(board);i++{
+        if (board[i][0]==winner &amp;&amp; board[i][1]==winner &amp;&amp; board[i][2]==winner)||
+            (board[0][i]==winner &amp;&amp; board[1][i]==winner &amp;&amp; board[2][i]==winner){
+            return true
+        }
+    }
+    if (board[0][0] == winner &amp;&amp; board[1][1] == winner &amp;&amp; board[2][2]==winner)||
+        (board[2][0] == winner &amp;&amp; board[1][1] == winner &amp;&amp; board[0][2]==winner){
+        return true
+    }
+    return false
+}
+</code></pre><h1 id="894-&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x6EE1;&#x4E8C;&#x53C9;&#x6811;"><a id="894" href="https://leetcode-cn.com/problems/all-possible-full-binary-trees/submissions/" target="_blank">894. &#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x6EE1;&#x4E8C;&#x53C9;&#x6811;</a></h1>
+<p>&#x6EE1;&#x4E8C;&#x53C9;&#x6811;&#x662F;&#x4E00;&#x7C7B;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x6070;&#x597D;&#x6709; 0 &#x6216; 2 &#x4E2A;&#x5B50;&#x7ED3;&#x70B9;&#x3002;&#x8FD4;&#x56DE;&#x5305;&#x542B; N &#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x6EE1;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x5217;&#x8868;&#x3002; &#x7B54;&#x6848;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x6811;&#x7684;&#x6839;&#x7ED3;&#x70B9;&#x3002;&#x7B54;&#x6848;&#x4E2D;&#x6BCF;&#x4E2A;&#x6811;&#x7684;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x90FD;&#x5FC5;&#x987B;&#x6709; node.val=0&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x6309;&#x4EFB;&#x4F55;&#x987A;&#x5E8F;&#x8FD4;&#x56DE;&#x6811;&#x7684;&#x6700;&#x7EC8;&#x5217;&#x8868;&#x3002;</p>
+<p><em>TAG&#xFF1A;&#x3010;&#x9012;&#x5F52;&#x3011;&#x3010;&#x6811;&#x3011;</em></p>
+<ul>
+<li>&#x9012;&#x5F52;&#x7684;&#x601D;&#x8DEF;&#xFF0C;N&#x4E2A;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x6839;&#x8282;&#x70B9;&#x5360;&#x7528;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5DE6;&#x53F3;&#x5B50;&#x5B69;&#x5B50;&#x5360;&#x6709;N-1&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x7531;&#x4E8E;&#x662F;&#x6EE1;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x5B58;&#x5728;&#x5DE6;&#x5B69;&#x5B50;&#xFF0C;&#x5FC5;&#x5B9A;&#x9700;&#x8981;&#x6709;&#x53F3;&#x5B69;&#x5B50;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;&#x904D;&#x5386;&#x5DE6;&#x5B69;&#x5B50;&#x5360;&#x7528;&#x8282;&#x70B9;&#x6811;&#x4E3A;1&#xFF5E;N-2&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5F97;&#x51FA;&#x5DE6;&#x5B69;&#x5B50;&#x53EF;&#x80FD;&#x7684;&#x6839;&#x8282;&#x70B9;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5C06;&#x8FD9;&#x4E9B;&#x6839;&#x8282;&#x70B9;&#x63A5;&#x4E0A;&#x539F;&#x59CB;root&#xFF0C;&#x5219;&#x5F97;&#x5230;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x6807;&#x7B54;&#x6848;&#x3002;</li>
+<li>&#x6838;&#x5FC3;&#x5728;&#x4E8E;&#x6784;&#x5EFA;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x7684;&#x5165;&#x53C2;&#x548C;&#x51FA;&#x53C2;&#x3002;&#x7406;&#x8BBA;&#x4E0A;&#xFF0C;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x662F;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;&#x4EFB;&#x4F55;&#x51FA;&#x53C2;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5165;&#x53C2;&#x4E2D;&#x5B58;&#x50A8;&#x7ED3;&#x679C;&#x3002;&#xFF08;&#x9700;&#x8981;&#x5B58;&#x50A8;&#x7ED3;&#x679C;&#x7684;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#x5B58;&#x50A8;&#x4E0B;&#x5B50;&#x95EE;&#x9898;&#x7684;&#x89E3;&#xFF0C;&#x907F;&#x514D;&#x91CD;&#x590D;&#x5B50;&#x95EE;&#x9898;&#x8BA1;&#x7B97;&#xFF09;&#x3002;&#x7531;&#x4E8E;&#x76EE;&#x6807;&#x7ED3;&#x679C;&#x662F;&#x6811;&#x7684;&#x5934;&#x8282;&#x70B9;&#x7684;&#x5207;&#x7247;<code>[]*TreeNode</code>&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B58;&#x5728;&#x5B50;&#x95EE;&#x9898;&#x7684;&#x89E3;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5B58;&#x8282;&#x70B9;&#x6570;&#x4E3A;1&#xFF5E;N&#x8303;&#x56F4;&#x7684;&#x7ED3;&#x679C;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5B58;&#x50A8;&#x7ED3;&#x679C;&#x7684;&#x7C7B;&#x578B;&#x8BBE;&#x7F6E;&#x4E3A;<code>[][]*TreeNode</code>.</li>
+</ul>
+<pre><code>func allPossibleFBT(N int) []*TreeNode {
+    if N == 0 {
+        return nil
+    }
+    store := make([][]*TreeNode, N+1)
+    findTree(N, &amp;store)
+    return store[N]
+}
+
+func findTree(N int, store *[][]*TreeNode) {
+    if N == 1 {
+        (*store)[N] = []*TreeNode{&amp;TreeNode{0, nil, nil}}
+        return
+    }
+
+    result := make([]*TreeNode, 0)
+    for i := 1; i &lt; N-1; i++ {
+        var left, right []*TreeNode
+        if len((*store)[i]) == 0 {
+            findTree(i, store)
+        }
+        left = (*store)[i]
+        if len((*store)[N-1-i]) == 0 {
+            findTree(N-1-i, store)
+        }
+        right = (*store)[N-1-i]
+
+        // &#x9012;&#x5F52;&#x7684;&#x6838;&#x5FC3;&#x5904;
+        for j := range left {
+            for k := range right {
+                root := &amp;TreeNode{0, left[j], right[k]}
+                result = append(result, root)
+            }
+        }
+    }
+    (*store)[N] = result
 }
 </code></pre><h1 id="912-&#x6392;&#x5E8F;&#x6570;&#x7EC4;"><a id="912" href="https://leetcode-cn.com/problems/sort-an-array/" target="_blank">912. &#x6392;&#x5E8F;&#x6570;&#x7EC4;</a></h1>
 <p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x6570;&#x7EC4; nums&#xFF0C;&#x5C06;&#x8BE5;&#x6570;&#x7EC4;&#x5347;&#x5E8F;&#x6392;&#x5217;&#x3002;</p>
@@ -664,7 +779,7 @@ func min(a, b int) int{
     return b
 }
 </code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; ZengMenglu 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x4E66;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF1A;
-2020-01-05 22:53:15
+2020-01-08 00:14:42
 </span></footer>
                                 
                                 </section>
@@ -708,7 +823,7 @@ func min(a, b int) int{
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Leetcode","level":"1.5.1","depth":2,"next":{"title":"递归","level":"1.5.2","depth":2,"path":"DataStructAndAlgorithm/recursion.md","ref":"DataStructAndAlgorithm/recursion.md","articles":[]},"previous":{"title":"数据结构与算法","level":"1.5","depth":1,"path":"DataStructAndAlgorithm/dataStructAndAlgorithm.md","ref":"DataStructAndAlgorithm/dataStructAndAlgorithm.md","articles":[{"title":"Leetcode","level":"1.5.1","depth":2,"path":"DataStructAndAlgorithm/leetcode.md","ref":"DataStructAndAlgorithm/leetcode.md","articles":[]},{"title":"递归","level":"1.5.2","depth":2,"path":"DataStructAndAlgorithm/recursion.md","ref":"DataStructAndAlgorithm/recursion.md","articles":[]},{"title":"动态规划","level":"1.5.3","depth":2,"path":"DataStructAndAlgorithm/dynamicProgram.md","ref":"DataStructAndAlgorithm/dynamicProgram.md","articles":[]},{"title":"排序","level":"1.5.4","depth":2,"path":"DataStructAndAlgorithm/sort.md","ref":"DataStructAndAlgorithm/sort.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-chapter-fold","code","-search","search-pro","github","splitter","tbfed-pagefooter","sharing","-highlight","styles-less","expandable-chapters-small","-toggle-chapters","-lunr","-fontsettings","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ZengMenglu 2020","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/zengmenglu"},"styles-less":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zengmenglu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zengmenglu Zone","language":"zh-hans","output.name":"site","links":{"sidebar":{"首页":"http://zengmenglu.github.io"}},"gitbook":"3.2.3","description":""},"file":{"path":"DataStructAndAlgorithm/leetcode.md","mtime":"2020-01-05T14:53:15.579Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-05T02:39:42.368Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Leetcode","level":"1.5.1","depth":2,"next":{"title":"递归","level":"1.5.2","depth":2,"path":"DataStructAndAlgorithm/recursion.md","ref":"DataStructAndAlgorithm/recursion.md","articles":[]},"previous":{"title":"数据结构与算法","level":"1.5","depth":1,"path":"DataStructAndAlgorithm/dataStructAndAlgorithm.md","ref":"DataStructAndAlgorithm/dataStructAndAlgorithm.md","articles":[{"title":"Leetcode","level":"1.5.1","depth":2,"path":"DataStructAndAlgorithm/leetcode.md","ref":"DataStructAndAlgorithm/leetcode.md","articles":[]},{"title":"递归","level":"1.5.2","depth":2,"path":"DataStructAndAlgorithm/recursion.md","ref":"DataStructAndAlgorithm/recursion.md","articles":[]},{"title":"动态规划","level":"1.5.3","depth":2,"path":"DataStructAndAlgorithm/dynamicProgram.md","ref":"DataStructAndAlgorithm/dynamicProgram.md","articles":[]},{"title":"排序","level":"1.5.4","depth":2,"path":"DataStructAndAlgorithm/sort.md","ref":"DataStructAndAlgorithm/sort.md","articles":[]},{"title":"树","level":"1.5.5","depth":2,"path":"DataStructAndAlgorithm/tree.md","ref":"DataStructAndAlgorithm/tree.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-chapter-fold","code","-search","search-pro","github","splitter","tbfed-pagefooter","sharing","-highlight","styles-less","expandable-chapters-small","-toggle-chapters","-lunr","-fontsettings","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ZengMenglu 2020","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/zengmenglu"},"styles-less":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zengmenglu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zengmenglu Zone","language":"zh-hans","output.name":"site","links":{"sidebar":{"首页":"http://zengmenglu.github.io"}},"gitbook":"3.2.3","description":""},"file":{"path":"DataStructAndAlgorithm/leetcode.md","mtime":"2020-01-07T16:14:42.373Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-07T05:30:38.752Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

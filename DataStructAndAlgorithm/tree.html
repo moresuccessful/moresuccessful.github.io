@@ -477,13 +477,94 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x79CD;&#x7C7B;"><b></b>&#x79CD;&#x7C7B;</a></li></ul></div><a href="#&#x79CD;&#x7C7B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x79CD;&#x7C7B;"><a name="&#x79CD;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x79CD;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x79CD;&#x7C7B;</h1>
-<p> &#x4E8C;&#x53C9;&#x6811;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;"><b></b>&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;"><b></b>&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;</a></li><ul><li><span class="title-icon "></span><a href="#dfs"><b></b>DFS</a></li><ul><li><span class="title-icon "></span><a href="#&#x524D;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x524D;&#x5E8F;&#x904D;&#x5386;</a></li><li><span class="title-icon "></span><a href="#&#x4E2D;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x4E2D;&#x5E8F;&#x904D;&#x5386;</a></li><li><span class="title-icon "></span><a href="#&#x540E;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x540E;&#x5E8F;&#x904D;&#x5386;</a></li></ul><li><span class="title-icon "></span><a href="#bfs"><b></b>BFS</a></li><ul><li><span class="title-icon "></span><a href="#&#x5C42;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x5C42;&#x5E8F;&#x904D;&#x5386;</a></li></ul></ul></ul></div><a href="#&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;"><a name="&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;</h1>
 <ol>
-<li>&#x6EE1;&#x4E8C;&#x53C9;&#x6811;&#xFF1A;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x6070;&#x6709;0&#x4E2A;&#x6216;2&#x4E2A;&#x5B50;&#x7ED3;&#x70B9;&#x3002; </li>
+<li>&#x6EE1;&#x4E8C;&#x53C9;&#x6811;&#xFF1A;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x6070;&#x6709;0&#x4E2A;&#x6216;2&#x4E2A;&#x5B50;&#x7ED3;&#x70B9;&#x3002;</li>
+<li>&#x641C;&#x7D22;&#x4E8C;&#x53C9;&#x6811;&#xFF1A; &#x5DE6;&#x53F6;&#x5B50; &lt; &#x6839; &lt; &#x53F3;&#x53F6;&#x5B50;</li>
 </ol>
+<h1 id="&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;"><a name="&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;</h1>
+<p>&#x6811;&#x7684;&#x904D;&#x5386;&#x65B9;&#x5F0F;&#x5206;&#x4E3A;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x904D;&#x5386;&#xFF08;DFS&#xFF09;&#x4E0E;&#x5BBD;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x904D;&#x5386;&#xFF08;BFS&#xFF09;&#x3002;</p>
+<ul>
+<li><p>DFS&#x91C7;&#x7528;&#x6DF1;&#x5EA6;&#x4F5C;&#x4E3A;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x4ECE;&#x6839;&#x5F00;&#x59CB;&#x4E00;&#x76F4;&#x904D;&#x5386;&#x5230;&#x67D0;&#x4E00;&#x786E;&#x5B9A;&#x8282;&#x70B9;&#xFF0C;&#x518D;&#x8FD4;&#x56DE;&#x6839;&#x5230;&#x8FBE;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x3002;DFS&#x53C8;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#x904D;&#x5386;&#x7684;&#x987A;&#x5E8F;&#x5206;&#x4E3A;<a href="#leetcode144">&#x524D;&#x5E8F;&#x904D;&#x5386;</a>&#xFF0C;<a href="#leetcode94">&#x4E2D;&#x5E8F;&#x904D;&#x5386;</a>&#x4E0E;<a href="#leetcode145">&#x540E;&#x5E8F;&#x904D;&#x5386;</a>&#x3002;</p>
+</li>
+<li><p>BSF&#x6309;&#x7167;&#x9AD8;&#x5EA6;&#x5C42;&#x6B21;&#x9010;&#x5C42;&#x904D;&#x5386;&#x6811;&#xFF0C;&#x5C42;&#x6B21;&#x9AD8;&#x7684;&#x8282;&#x70B9;&#x4F18;&#x5148;&#x4E8E;&#x5C42;&#x6B21;&#x4F4E;&#x7684;&#x7684;&#x8282;&#x70B9;&#x88AB;&#x904D;&#x5386;&#x3002;BFS&#x5305;&#x542B;&#x6811;&#x7684;&#x5C42;&#x5E8F;&#x904D;&#x5386;</p>
+</li>
+</ul>
+<h2 id="dfs"><a name="dfs" class="anchor-navigation-ex-anchor" href="#dfs"><i class="fa fa-link" aria-hidden="true"></i></a>DFS</h2>
+<h3 id="&#x524D;&#x5E8F;&#x904D;&#x5386;"><a name="&#x524D;&#x5E8F;&#x904D;&#x5386;" class="anchor-navigation-ex-anchor" href="#&#x524D;&#x5E8F;&#x904D;&#x5386;"><i class="fa fa-link" aria-hidden="true"></i></a><a id="leetcode144" href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/" target="_blank">&#x524D;&#x5E8F;&#x904D;&#x5386;</a></h3>
+<ol>
+<li>&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6808;<code>nodeSaver</code>&#x4E00;&#x6B21;&#x5B58;&#x50A8;&#x6839;&#x8282;&#x70B9;&#x3001;&#x53F3;&#x8282;&#x70B9;&#x3001;&#x5DE6;&#x8282;&#x70B9;&#x3002;</li>
+<li>&#x4E0B;&#x4E00;&#x6B21;&#x904D;&#x5386;&#xFF0C;&#x6808;&#x9876;&#x5F39;&#x51FA;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x5DE6;&#x8282;&#x70B9;Left&#xFF0C;&#x5E76;&#x7EE7;&#x7EED;&#x538B;&#x6808;Left&#x7684;&#x53F3;&#x3001;&#x5DE6;&#x8282;&#x70B9;&#x3002;</li>
+<li>&#x5982;&#x6B64;&#xFF0C;&#x5148;&#x904D;&#x5386;&#x4E86;&#x6839;&#x548C;&#x5DE6;&#x8282;&#x70B9;&#xFF0C;&#x6700;&#x540E;&#x904D;&#x5386;&#x53F3;&#x8282;&#x70B9;&#x3002;</li>
+</ol>
+<pre><code>func preorderTraversal(root *TreeNode) []int {
+    if root == nil {
+        return nil
+    }
+    nodeSaver, res := []*TreeNode{root}, []int{} // &#x6808;&#x521D;&#x59CB;&#x5316;
+    for len(nodeSaver) &gt; 0 {
+        curNode := nodeSaver[len(nodeSaver)-1]
+        nodeSaver = nodeSaver[:len(nodeSaver)-1] // &#x6839;&#x8282;&#x70B9;&#x51FA;&#x6808;
+        res = append(res, curNode.Val)
+        if curNode.Right != nil {
+            nodeSaver = append(nodeSaver, curNode.Right) // &#x53F3;&#x8282;&#x70B9;&#x538B;&#x6808;
+        }
+        if curNode.Left != nil {
+            nodeSaver = append(nodeSaver, curNode.Left) // &#x5DE6;&#x8282;&#x70B9;&#x538B;&#x6808;
+        }
+    }
+    return res
+}
+</code></pre><h3 id="&#x4E2D;&#x5E8F;&#x904D;&#x5386;"><a name="&#x4E2D;&#x5E8F;&#x904D;&#x5386;" class="anchor-navigation-ex-anchor" href="#&#x4E2D;&#x5E8F;&#x904D;&#x5386;"><i class="fa fa-link" aria-hidden="true"></i></a><a id="leetcode94" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/" target="_blank">&#x4E2D;&#x5E8F;&#x904D;&#x5386;</a></h3>
+<ol>
+<li>&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6808;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x5F80;&#x4E0B;&#x904D;&#x5386;&#x7684;&#x6240;&#x6709;&#x7684;&#x6839;&#x548C;&#x5DE6;&#x5B50;&#x6811;&#x7684;&#x8282;&#x70B9;&#x3002;</li>
+<li>&#x5F53;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x904D;&#x5386;&#x5230;&#x672B;&#x7AEF;&#xFF08;nil&#xFF09;&#x65F6;&#xFF0C;&#x5F00;&#x59CB;&#x5F39;&#x6808;&#xFF0C;&#x4F9D;&#x6B21;&#x5C06;&#x5DE6;&#x5B50;&#x6811;&#x548C;&#x6839;&#x5F39;&#x51FA;&#xFF0C;&#x6700;&#x540E;&#x968F;&#x540E;&#x5F53;&#x524D;&#x6839;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x53F6;&#x5B50;&#x3002;</li>
+</ol>
+<pre><code>func inorderTraversal(root *TreeNode) []int {
+    if root == nil {
+        return nil
+    }
+    var nodeSaver []*TreeNode
+    var res []int
+    for cur := root; cur != nil || len(nodeSaver) &gt; 0; {
+        for cur != nil { 
+            nodeSaver = append(nodeSaver, cur) // &#x5F53;&#x524D;&#x8282;&#x70B9;&#x5411;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6839;&#x3001;&#x5DE6;&#x53F6;&#x5B50;&#x538B;&#x6808;
+            cur = cur.Left
+        }
+        cur = nodeSaver[len(nodeSaver)-1]
+        nodeSaver = nodeSaver[:len(nodeSaver)-1] // &#x5DE6;&#x53F6;&#x5B50;/&#x6839;&#x51FA;&#x6808;
+        res = append(res, cur.Val)
+        cur = cur.Right // &#x5904;&#x7406;&#x53F3;&#x53F6;&#x5B50;
+    }
+    return res
+}
+</code></pre><h3 id="&#x540E;&#x5E8F;&#x904D;&#x5386;"><a name="&#x540E;&#x5E8F;&#x904D;&#x5386;" class="anchor-navigation-ex-anchor" href="#&#x540E;&#x5E8F;&#x904D;&#x5386;"><i class="fa fa-link" aria-hidden="true"></i></a><a id="leetcode145" href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/submissions/" target="_blank">&#x540E;&#x5E8F;&#x904D;&#x5386;</a></h3>
+<ol>
+<li>&#x65B9;&#x6CD5;&#x4E0E;&#x524D;&#x5E8F;&#x904D;&#x5386;&#x7C7B;&#x4F3C;&#xFF0C;&#x524D;&#x5E8F;&#x904D;&#x5386;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x6839;&#x5DE6;&#x53F3;&#xFF1B;&#x540E;&#x5E8F;&#x987A;&#x5E8F;&#x662F;&#x5DE6;&#x53F3;&#x6839;&#xFF0C;&#x540E;&#x5E8F;&#x7ED3;&#x679C;&#x9006;&#x5E8F;&#x4E4B;&#x540E;&#x662F;&#x6839;&#x53F3;&#x5DE6;&#x3002;</li>
+<li>&#x56E0;&#x6B64;&#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x538B;&#x6808;&#x987A;&#x5E8F;&#x662F;&#x6839;&#x3001;&#x5DE6;&#x3001;&#x53F3;&#xFF0C;&#x5B58;&#x50A8;&#x7ED3;&#x679C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x628A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x503C;&#x653E;&#x5728;&#x524D;&#x9762;&#xFF08;&#x5373;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x9006;&#x5E8F;&#xFF09;</li>
+</ol>
+<pre><code>func postorderTraversal(root *TreeNode) []int {
+    if root == nil{
+        return nil
+    }
+    nodeSaver, res := []*TreeNode{root}, []int{} // &#x6808;&#x521D;&#x59CB;&#x5316;
+    for len(nodeSaver) &gt; 0 {
+        cur := nodeSaver[len(nodeSaver)-1]
+        nodeSaver = nodeSaver[:len(nodeSaver)-1] // &#x6839;&#x8282;&#x70B9;&#x51FA;&#x6808;
+        res = append([]int{cur.Val}, res...) // &#x7ED3;&#x679C;&#x9006;&#x5E8F;&#x5B58;&#x50A8;
+        if cur.Left != nil{
+            nodeSaver = append(nodeSaver, cur.Left) //  &#x5DE6;&#x8282;&#x70B9;&#x538B;&#x6808;
+        }
+        if cur.Right!= nil{
+            nodeSaver = append(nodeSaver, cur.Right) // &#x53F3;&#x8282;&#x70B9;&#x538B;&#x6808;
+        }
+    }
+    return res
+}
+</code></pre><h2 id="bfs"><a name="bfs" class="anchor-navigation-ex-anchor" href="#bfs"><i class="fa fa-link" aria-hidden="true"></i></a>BFS</h2>
+<h3 id="&#x5C42;&#x5E8F;&#x904D;&#x5386;"><a name="&#x5C42;&#x5E8F;&#x904D;&#x5386;" class="anchor-navigation-ex-anchor" href="#&#x5C42;&#x5E8F;&#x904D;&#x5386;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C42;&#x5E8F;&#x904D;&#x5386;</h3>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; ZengMenglu 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x4E66;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF1A;
-2020-01-08 22:46:52
+2020-01-31 17:03:21
 </span></footer>
                                 
                                 </section>
@@ -527,7 +608,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"树","level":"2.4.5","depth":2,"next":{"title":"DFS & BFS","level":"2.4.6","depth":2,"path":"DataStructAndAlgorithm/bfsDfs.md","ref":"DataStructAndAlgorithm/bfsDfs.md","articles":[]},"previous":{"title":"排序","level":"2.4.4","depth":2,"path":"DataStructAndAlgorithm/sort.md","ref":"DataStructAndAlgorithm/sort.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-chapter-fold","code","-search","search-pro","github","splitter","tbfed-pagefooter","sharing","-highlight","styles-less","expandable-chapters-small","-toggle-chapters","-lunr","-fontsettings","ancre-navigation","-multipart"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ZengMenglu 2020","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/zengmenglu"},"styles-less":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"back-to-top-button":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zengmenglu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zengmenglu Zone","language":"zh-hans","output.name":"site","links":{"sidebar":{"首页":"http://zengmenglu.github.io"}},"gitbook":"3.2.3","description":""},"file":{"path":"DataStructAndAlgorithm/tree.md","mtime":"2020-01-08T14:46:52.151Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-20T15:27:19.691Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"树","level":"2.4.5","depth":2,"next":{"title":"DFS & BFS","level":"2.4.6","depth":2,"path":"DataStructAndAlgorithm/bfsDfs.md","ref":"DataStructAndAlgorithm/bfsDfs.md","articles":[]},"previous":{"title":"排序","level":"2.4.4","depth":2,"path":"DataStructAndAlgorithm/sort.md","ref":"DataStructAndAlgorithm/sort.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-chapter-fold","code","-search","search-pro","github","splitter","tbfed-pagefooter","sharing","-highlight","styles-less","expandable-chapters-small","-toggle-chapters","-lunr","-fontsettings","ancre-navigation","-multipart","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ZengMenglu 2020","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/zengmenglu"},"styles-less":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"back-to-top-button":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zengmenglu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zengmenglu Zone","language":"zh-hans","output.name":"site","links":{"sidebar":{"首页":"http://zengmenglu.github.io"}},"gitbook":"3.2.3","description":""},"file":{"path":"DataStructAndAlgorithm/tree.md","mtime":"2020-01-31T09:03:21.980Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-02T16:09:20.198Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -566,6 +647,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
 

@@ -2,13 +2,19 @@
 
 ![go 开发者成长之路](pic/go_developer_road.jpg)
 
+[Golang github](https://github.com/golang/go)
+
 
 优点
+* 并发 connection pooling
+
 缺点
 适用场景
 
 Golang| C/C++| Java| Python
 -|-|-|-
+
+
 
 
 # 数据
@@ -36,6 +42,8 @@ reflect 性能
 
 ## go marshal
 ## test
+
+
 
 # 工程
 

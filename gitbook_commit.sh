@@ -1,6 +1,7 @@
 # upload markdown files
 GITBOOK_PATH="/Users/melody/know/CommTech/gitbook"
 cd $GITBOOK_PATH
+gitbook build
 git add .
 git commit -m "$1"
 git push

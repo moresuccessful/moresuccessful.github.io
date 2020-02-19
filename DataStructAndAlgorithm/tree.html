@@ -714,7 +714,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;"><b></b>&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;"><b></b>&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;</a></li><ul><li><span class="title-icon "></span><a href="#dfs"><b></b>DFS</a></li><ul><li><span class="title-icon "></span><a href="#&#x524D;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x524D;&#x5E8F;&#x904D;&#x5386;</a></li><li><span class="title-icon "></span><a href="#&#x4E2D;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x4E2D;&#x5E8F;&#x904D;&#x5386;</a></li><li><span class="title-icon "></span><a href="#&#x540E;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x540E;&#x5E8F;&#x904D;&#x5386;</a></li><li><span class="title-icon "></span><a href="#&#x91CD;&#x5EFA;&#x4E8C;&#x53C9;&#x6811;"><b></b>&#x91CD;&#x5EFA;&#x4E8C;&#x53C9;&#x6811;</a></li></ul></ul></ul></div><a href="#&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;"><a name="&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;"><b></b>&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;"><b></b>&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;</a></li><ul><li><span class="title-icon "></span><a href="#dfs"><b></b>DFS</a></li><ul><li><span class="title-icon "></span><a href="#&#x524D;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x524D;&#x5E8F;&#x904D;&#x5386;</a></li><li><span class="title-icon "></span><a href="#&#x4E2D;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x4E2D;&#x5E8F;&#x904D;&#x5386;</a></li><li><span class="title-icon "></span><a href="#&#x540E;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x540E;&#x5E8F;&#x904D;&#x5386;</a></li><li><span class="title-icon "></span><a href="#&#x91CD;&#x5EFA;&#x4E8C;&#x53C9;&#x6811;"><b></b>&#x91CD;&#x5EFA;&#x4E8C;&#x53C9;&#x6811;</a></li></ul><li><span class="title-icon "></span><a href="#bfs"><b></b>BFS</a></li><ul><li><span class="title-icon "></span><a href="#&#x5C42;&#x5E8F;&#x904D;&#x5386;"><b></b>&#x5C42;&#x5E8F;&#x904D;&#x5386;</a></li></ul></ul></ul></div><a href="#&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;"><a name="&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x53C9;&#x6811;&#x5206;&#x7C7B;</h1>
 <ol>
 <li>&#x6EE1;&#x4E8C;&#x53C9;&#x6811;&#xFF1A;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x6070;&#x6709;0&#x4E2A;&#x6216;2&#x4E2A;&#x5B50;&#x7ED3;&#x70B9;&#x3002;</li>
 <li>&#x641C;&#x7D22;&#x4E8C;&#x53C9;&#x6811;&#xFF1A; &#x5DE6;&#x53F6;&#x5B50; &lt; &#x6839; &lt; &#x53F3;&#x53F6;&#x5B50;</li>
@@ -914,42 +914,78 @@
  /\<br>
 2 3<br></p>
 <p>voyage=[1,3,2], &#x5219;&#x8F93;&#x51FA; [1]</p>
-<pre><code>```
+<pre><code>func flipMatchVoyage(root *TreeNode, voyage []int) []int {
+    var idx = 0
+    return flipMatchVoyagePreSearch(root,voyage,&amp;idx)
+}
 
-## BFS
+func flipMatchVoyagePreSearch(root *TreeNode, voyage []int, idx *int)[]int{
+    var res []int
+    if root == nil &amp;&amp; *idx &gt;= len(voyage) {
+        return []int{-1}
+    }
+    if (root == nil &amp;&amp; *idx &lt; len(voyage)) || (root!= nil &amp;&amp; (*idx &gt;= len(voyage) || root.Val != voyage[*idx])){
+            return []int{-1}
+    }
 
-### &lt;a id =&quot;leetcode102&quot; href=&#x201C;https://leetcode-cn.com/problems/binary-tree-level-order-traversal/submissions/&#x201D;&gt;&#x5C42;&#x5E8F;&#x904D;&#x5386;&lt;/a&gt;
+    if  *idx+1&lt;len(voyage) &amp;&amp;
+        ((root.Left!= nil&amp;&amp; voyage[*idx+1]!=root.Left.Val)||(root.Left==nil&amp;&amp;root.Right!=nil&amp;&amp;voyage[*idx+1]!=root.Right.Val)){
+        root.Left,root.Right = root.Right,root.Left
+        res = append(res,root.Val)
+    }
+    *idx++
+    if root.Left!= nil{
+        left:=flipMatchVoyagePreSearch(root.Left,voyage,idx)
+        if reflect.DeepEqual(left,[]int{-1}){
+            return left
+        }
+        res = append(res, left...)
+    }
 
-1. &#x5F53;&#x5C42;&#x5E8F;&#x904D;&#x5386;&#x7684;&#x7ED3;&#x679C;&#x53EA;&#x9700;&#x8981;&#x5B58;&#x5728;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x4E2D;&#x65F6;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x5B58;&#x50A8;&#x6811;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x4E00;&#x76F4;&#x5F80;&#x540E;&#x9762;&#x8FFD;&#x52A0;&#x8282;&#x70B9;&#x5373;&#x53EF;&#x3002;
-2. &#x6709;&#x7684;&#x5C42;&#x5E8F;&#x904D;&#x5386;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#xFF0C;&#x5F53;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x5B58;&#x5230;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x5373;&#x6BCF;&#x4E00;&#x5C42;&#x5143;&#x7D20;&#x5355;&#x72EC;&#x4E00;&#x4E2A;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x65F6;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x5B58;&#x50A8;&#x6811;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x7528;curIdx&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x5C42;&#x3002;&#x8FD9;&#x91CC;&#x8981;&#x6CE8;&#x610F;&#x5BB9;&#x6613;&#x9519;&#x7684;&#x70B9;&#x662F;&#xFF0C;&#x5220;&#x9664;slice&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;```arr = append(arr, arr[1:]...)```, &#x8FD9;&#x6837;&#x5E76;&#x4E0D;&#x662F;&#x4ECE;&#x5934;&#x5F00;&#x59CB;append&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x4E0D;&#x4F1A;&#x5220;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x53CD;&#x800C;arr&#x7684;&#x5143;&#x7D20;&#x4E00;&#x76F4;&#x5728;&#x589E;&#x52A0;&#x3002;&#x76F4;&#x63A5;```arr = arr[1:]```&#x5373;&#x53EF;&#x3002;(&#x5FAE;&#x8F6F;2019&#x4E8C;&#x9762;&#x9762;&#x8BD5;&#x9898;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x5730;&#x65B9;&#x9519;&#x4E86;)
-</code></pre><p>func levelOrder(root *TreeNode) [][]int {
+    if root.Right!= nil{
+        right:=flipMatchVoyagePreSearch(root.Right,voyage,idx)
+        if reflect.DeepEqual(right,[]int{-1}){
+            return right
+        }
+        res= append(res,right...)
+    }
+
+    return res
+}
+</code></pre><h2 id="bfs"><a name="bfs" class="anchor-navigation-ex-anchor" href="#bfs"><i class="fa fa-link" aria-hidden="true"></i></a>BFS</h2>
+<h3 id="&#x5C42;&#x5E8F;&#x904D;&#x5386;"><a name="&#x5C42;&#x5E8F;&#x904D;&#x5386;" class="anchor-navigation-ex-anchor" href="#&#x5C42;&#x5E8F;&#x904D;&#x5386;"><i class="fa fa-link" aria-hidden="true"></i></a><a id="leetcode102" href="&#x201C;https:/leetcode-cn.com/problems/binary-tree-level-order-traversal/submissions/&#x201D;">&#x5C42;&#x5E8F;&#x904D;&#x5386;</a></h3>
+<ol>
+<li>&#x5F53;&#x5C42;&#x5E8F;&#x904D;&#x5386;&#x7684;&#x7ED3;&#x679C;&#x53EA;&#x9700;&#x8981;&#x5B58;&#x5728;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x4E2D;&#x65F6;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x5B58;&#x50A8;&#x6811;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x4E00;&#x76F4;&#x5F80;&#x540E;&#x9762;&#x8FFD;&#x52A0;&#x8282;&#x70B9;&#x5373;&#x53EF;&#x3002;</li>
+<li>&#x6709;&#x7684;&#x5C42;&#x5E8F;&#x904D;&#x5386;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#xFF0C;&#x5F53;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x5B58;&#x5230;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x5373;&#x6BCF;&#x4E00;&#x5C42;&#x5143;&#x7D20;&#x5355;&#x72EC;&#x4E00;&#x4E2A;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x65F6;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x5B58;&#x50A8;&#x6811;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x7528;curIdx&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x5C42;&#x3002;&#x8FD9;&#x91CC;&#x8981;&#x6CE8;&#x610F;&#x5BB9;&#x6613;&#x9519;&#x7684;&#x70B9;&#x662F;&#xFF0C;&#x5220;&#x9664;slice&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;<code>arr = append(arr, arr[1:]...)</code>, &#x8FD9;&#x6837;&#x5E76;&#x4E0D;&#x662F;&#x4ECE;&#x5934;&#x5F00;&#x59CB;append&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x4E0D;&#x4F1A;&#x5220;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x53CD;&#x800C;arr&#x7684;&#x5143;&#x7D20;&#x4E00;&#x76F4;&#x5728;&#x589E;&#x52A0;&#x3002;&#x76F4;&#x63A5;<code>arr = arr[1:]</code>&#x5373;&#x53EF;&#x3002;(&#x5FAE;&#x8F6F;2019&#x4E8C;&#x9762;&#x9762;&#x8BD5;&#x9898;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x5730;&#x65B9;&#x9519;&#x4E86;)</li>
+</ol>
+<pre><code>func levelOrder(root *TreeNode) [][]int {
     if root == nil {
         return nil
-    }</p>
-<pre><code>curIdx := 0
-nodeSaver, curLayer, res := [2][]*TreeNode{{root}, {}}, []int{}, [][]int{}
-for len(nodeSaver[curIdx]) &gt; 0 {
-    curNode := nodeSaver[curIdx][0]
-    curLayer = append(curLayer, curNode.Val)
-    if curNode.Left != nil {
-        nodeSaver[1-curIdx] = append(nodeSaver[1-curIdx], curNode.Left)
-    }
-    if curNode.Right != nil {
-        nodeSaver[1-curIdx] = append(nodeSaver[1-curIdx], curNode.Right)
     }
 
-    nodeSaver[curIdx] = nodeSaver[curIdx][1:] // &#x5220;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5BB9;&#x6613;&#x51FA;&#x9519;
-    if len(nodeSaver[curIdx]) == 0 {
-        res = append(res, curLayer)
-        curLayer = make([]int, 0) // curLayer &#x5B58;&#x50A8;&#x5F53;&#x524D;&#x5C42;&#x7684;&#x5143;&#x7D20;
-        curIdx = 1 - curIdx
+    curIdx := 0
+    nodeSaver, curLayer, res := [2][]*TreeNode{{root}, {}}, []int{}, [][]int{}
+    for len(nodeSaver[curIdx]) &gt; 0 {
+        curNode := nodeSaver[curIdx][0]
+        curLayer = append(curLayer, curNode.Val)
+        if curNode.Left != nil {
+            nodeSaver[1-curIdx] = append(nodeSaver[1-curIdx], curNode.Left)
+        }
+        if curNode.Right != nil {
+            nodeSaver[1-curIdx] = append(nodeSaver[1-curIdx], curNode.Right)
+        }
+
+        nodeSaver[curIdx] = nodeSaver[curIdx][1:] // &#x5220;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5BB9;&#x6613;&#x51FA;&#x9519;
+        if len(nodeSaver[curIdx]) == 0 {
+            res = append(res, curLayer)
+            curLayer = make([]int, 0) // curLayer &#x5B58;&#x50A8;&#x5F53;&#x524D;&#x5C42;&#x7684;&#x5143;&#x7D20;
+            curIdx = 1 - curIdx
+        }
     }
+    return res
 }
-return res
-</code></pre><p>}
-```</p>
-<footer class="page-footer"><span class="copyright">Copyright &#xA9; ZengMenglu 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x4E66;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF1A;
-2020-02-16 09:19:24
+</code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; ZengMenglu 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x4E66;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF1A;
+2020-02-19 23:03:20
 </span></footer>
                                 
                                 </section>
@@ -993,7 +1029,7 @@ return res
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"树","level":"2.3.2","depth":2,"next":{"title":"字符串","level":"2.3.3","depth":2,"path":"DataStructAndAlgorithm/string.md","ref":"DataStructAndAlgorithm/string.md","articles":[]},"previous":{"title":"Leetcode","level":"2.3.1","depth":2,"path":"DataStructAndAlgorithm/leetcode.md","ref":"DataStructAndAlgorithm/leetcode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-chapter-fold","code","-search","search-pro","github","splitter","tbfed-pagefooter","sharing","-highlight","styles-less","expandable-chapters-small","-toggle-chapters","-lunr","-fontsettings","ancre-navigation","-multipart","pageview-count","mermaid","mermaid-gb3"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ZengMenglu 2020","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/zengmenglu"},"styles-less":{},"splitter":{},"search-pro":{},"mermaid":{},"code":{"copyButtons":true},"mermaid-gb3":{},"back-to-top-button":{},"pageview-count":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zengmenglu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zengmenglu Zone","language":"zh-hans","output.name":"site","links":{"sidebar":{"首页":"http://zengmenglu.github.io"}},"gitbook":"3.2.3","description":""},"file":{"path":"DataStructAndAlgorithm/tree.md","mtime":"2020-02-16T01:19:24.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-19T11:00:48.828Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"树","level":"2.3.2","depth":2,"next":{"title":"字符串","level":"2.3.3","depth":2,"path":"DataStructAndAlgorithm/string.md","ref":"DataStructAndAlgorithm/string.md","articles":[]},"previous":{"title":"Leetcode","level":"2.3.1","depth":2,"path":"DataStructAndAlgorithm/leetcode.md","ref":"DataStructAndAlgorithm/leetcode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-chapter-fold","code","-search","search-pro","github","splitter","tbfed-pagefooter","sharing","-highlight","styles-less","expandable-chapters-small","-toggle-chapters","-lunr","-fontsettings","ancre-navigation","-multipart","pageview-count","mermaid","mermaid-gb3"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ZengMenglu 2020","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/zengmenglu"},"styles-less":{},"splitter":{},"search-pro":{},"mermaid":{},"code":{"copyButtons":true},"mermaid-gb3":{},"back-to-top-button":{},"pageview-count":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zengmenglu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zengmenglu Zone","language":"zh-hans","output.name":"site","links":{"sidebar":{"首页":"http://zengmenglu.github.io"}},"gitbook":"3.2.3","description":""},"file":{"path":"DataStructAndAlgorithm/tree.md","mtime":"2020-02-19T15:03:20.718Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-19T15:22:05.081Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

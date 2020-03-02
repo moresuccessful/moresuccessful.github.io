@@ -1,6 +1,8 @@
 # upload markdown files
 COMMEND="GITBOOK"
-
+if [ -n "$1" ]; then 
+    COMMEND=$1
+fi
 
 GITBOOK_PATH="/Users/melody/know/CommTech/gitbook"
 cd $GITBOOK_PATH

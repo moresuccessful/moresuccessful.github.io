@@ -223,9 +223,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="dataStructAndAlgorithm.html">
+        <li class="chapter " data-level="2.3" data-path="alg.html">
             
-                <a href="dataStructAndAlgorithm.html">
+                <a href="alg.html">
             
                     
                     数据结构与算法
@@ -759,9 +759,291 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><a href="dataStructAndAlgorithm.html#912">&#x6392;&#x5E8F;</a> </p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x6392;&#x5E8F;"><b></b>&#x6392;&#x5E8F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6392;&#x5E8F;&#x65B9;&#x6CD5;"><b></b>&#x6392;&#x5E8F;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;"><b></b>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;</a></li></ul><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;"><b></b>&#x53C2;&#x8003;</a></li></ul></div><a href="#&#x6392;&#x5E8F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6392;&#x5E8F;"><a name="&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6392;&#x5E8F;</h1>
+<h2 id="&#x6392;&#x5E8F;&#x65B9;&#x6CD5;"><a name="&#x6392;&#x5E8F;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x6392;&#x5E8F;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6392;&#x5E8F;&#x65B9;&#x6CD5;</h2>
+<p>&#x9700;&#x8981;&#x638C;&#x63E1;&#x989D;&#x5916;&#x7A7A;&#x95F4;&#x6D88;&#x8017;&#x3001;&#x5E73;&#x5747;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x3001;&#x6700;&#x5DEE;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x5E76;&#x6BD4;&#x8F83;&#x4E0D;&#x540C;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x4F18;&#x52A3;&#x3002;</p>
+<h4 id="&#x63D2;&#x5165;&#x6392;&#x5E8F;"><a name="&#x63D2;&#x5165;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x63D2;&#x5165;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63D2;&#x5165;&#x6392;&#x5E8F;</h4>
+<p>&#x6BCF;&#x6B65;&#x5C06;&#x4E00;&#x4E2A;&#x5F85;&#x6392;&#x5E8F;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x6309;&#x5176;&#x5173;&#x952E;&#x7801;&#x503C;&#x7684;&#x5927;&#x5C0F;&#x63D2;&#x5165;&#x524D;&#x9762;&#x5DF2;&#x7ECF;&#x6392;&#x5E8F;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x9002;&#x5F53;&#x4F4D;&#x7F6E;&#x4E0A;&#xFF0C;&#x76F4;&#x5230;&#x5168;&#x90E8;&#x63D2;&#x5165;&#x5B8C;&#x4E3A;&#x6B62;&#x3002;</p>
+<p>insert sort&#xFF0C;&#x7A33;&#x5B9A;&#x7684;&#xFF0C;&#x6700;&#x5DEE;O(n^2)&#xFF0C;&#x5E73;&#x5747;O(n^2)&#xFF0C;&#x6700;&#x597D;O(n&#xFF09;&#xFF0C;&#x7A7A;&#x95F4;O(1)</p>
+<pre><code>// &#x7B80;&#x5355;&#x63D2;&#x5165;&#x6392;&#x5E8F;
+func insertSort(nums []int) []int {
+    for i := 1; i&lt; len(nums); i++ {
+        preIdx := i-1
+        curVal := nums[i]
+        for ;preIdx &gt;= 0 &amp;&amp; curVal &lt; nums[preIdx]; preIdx--{
+            nums[preIdx+1] = nums[preIdx]
+        }
+        nums[preIdx+1] = curVal
+    }
+    return nums
+}
+</code></pre><p>&#x6CE8;&#xFF1A; &#x4E0A;&#x8FF0;&#x89E3;&#x6CD5;&#x4E2D;num[:i-1]&#x662F;&#x5DF2;&#x7ECF;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x90E8;&#x5206;&#xFF0C;num[j]&#x662F;&#x8981;&#x63D2;&#x5165;&#x7684;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x9010;&#x4E2A;&#x6BD4;&#x8F83;&#x5DF2;&#x7ECF;&#x6392;&#x597D;&#x5E8F;&#x90E8;&#x5206;&#x7684;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x63D2;&#x5165;&#x5230;&#x5408;&#x9002;&#x7684;&#x5730;&#x65B9;&#x3002;&#xFF08;&#x8FD9;&#x91CC;&#x5176;&#x5B9E;&#x4E5F;&#x7528;&#x5230;&#x7684;&#x5192;&#x6CE1;&#xFF09;</p>
+<h4 id="&#x5192;&#x6CE1;&#x6392;&#x5E8F;"><a name="&#x5192;&#x6CE1;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5192;&#x6CE1;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5192;&#x6CE1;&#x6392;&#x5E8F;</h4>
+<p>bubble sort, &#xA0;&#x7A33;&#x5B9A;&#x7684;&#xFF0C;&#x6700;&#x5DEE;O(n^2)&#xFF0C;&#x5E73;&#x5747;O(n^2)&#xFF0C;&#x6700;&#x597D;O(n^2)&#xFF0C;&#x7A7A;&#x95F4;O(1)</p>
+<pre><code>// &#x5192;&#x6CE1;&#x6392;&#x5E8F;
+func bubleSort(nums []int)[]int{
+    for i := 0; i &lt; len(nums) - 1; i++{
+        for j := 0; j &lt; len(nums) - i - 1; j++ {
+            if nums[j] &gt; nums[j + 1]{
+                nums[j], nums[j+1] = nums[j+1], nums[j] 
+            }
+        }
+    }
+    return nums
+}
+</code></pre><h4 id="&#x9009;&#x62E9;&#x6392;&#x5E8F;"><a name="&#x9009;&#x62E9;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x9009;&#x62E9;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9009;&#x62E9;&#x6392;&#x5E8F;</h4>
+<p>selection sort&#xFF0C;&#x7A33;&#x5B9A;&#x7684;&#xFF0C;&#x6700;&#x5DEE;O(n^2)&#xFF0C;&#x5E73;&#x5747;O(n^2)&#xFF0C;&#x6700;&#x597D;O(n^2)&#xFF0C;&#x7A7A;&#x95F4;O(1) </p>
+<pre><code>// &#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;
+func selectSort(nums []int) []int {
+    for i := 0; i &lt; len(nums) - 1; i++ {
+        minIdx := i
+        for j := i+1; j &lt; len(nums); j++ {
+            if nums[minIdx] &gt; nums[j] {
+                minIdx = j
+            }
+        }
+        nums[i], nums[minIdx] = nums[minIdx], nums[i]
+    } 
+    return nums
+}
+</code></pre><h4 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><a name="&#x5FEB;&#x901F;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a><strong><u>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</u></strong></h4>
+<p>&#x5148;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x6BD4;&#x8BE5;&#x6570;&#x5C0F;&#x7684;&#x653E;&#x5728;&#x5DE6;&#x8FB9;&#xFF0C;&#x5927;&#x7684;&#x653E;&#x5728;&#x53F3;&#x8FB9;&#x3002;</p>
+<ul>
+<li>quick sort&#xFF0C;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x6700;&#x5DEE;O(n^2)&#xFF0C;&#x5E73;&#x5747;O(nlog2^n)&#xFF0C;&#x6700;&#x597D;O(nlog2^n)&#xFF0C;&#x7A7A;&#x95F4;O(nlog2^n)</li>
+<li>&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x5F53;n&#x5F88;&#x5C0F;&#x65F6;&#xFF0C;&#x662F;&#x5F88;&#x6162;&#x7684;&#x3002;</li>
+<li><p>&#x53EF;&#x4EE5;&#x6709;&#x6539;&#x8FDB;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F53;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x5C0F;&#x4E8E;&#x4E00;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7528;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x6765;&#x6392;&#x5E8F;&#x5C0F;&#x6570;&#x7EC4;&#xFF1B;</li>
+<li><p>&#x5F53;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x5C0F;&#x4E8E;&#x4E00;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6570;&#x7EC4;&#x57FA;&#x672C;&#x6709;&#x5E8F;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x5BF9;&#x5168;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF1B;&#x8FD9;&#x4E2A;&#x957F;&#x5EA6;&#x5728;&#x5C0F;&#x4E8E;9&#x7684;&#x65F6;&#x5019;&#x6700;&#x597D;&#xFF1B;</p>
+<pre><code>// &#x5FEB;&#x901F;&#x6392;&#x5E8F;
+func quickSort(nums []int)[]int{
+partialLast(nums,0, len(nums)-1)
+return nums
+}
+func partial(nums []int, low, high int){ // &#x7B2C;&#x4E00;&#x4E2A;&#x503C;&#x4E3A;pivot
+if low &gt;= high {return}
+pivot := nums[low]
+i,j := low, high
+for i&lt;j{
+  for ;i&lt;j &amp;&amp; nums[j]&gt;=pivot;j--{}
+  if i&lt;j{
+      nums[i] = nums[j]
+      i++
+  } 
+  for ;i&lt;j&amp;&amp;nums[i]&lt;=pivot;i++{}
+  if i&lt;j{
+      nums[j] = nums[i]
+      j--
+  }
+}
+nums[i] = pivot
+partial(nums, low, i-1)
+partial(nums,i+1,high)
+}
+func partialMid(nums []int, low, high int) { //&#x4E2D;&#x95F4;&#x4E00;&#x4E2A;&#x503C;&#x4F5C;pivot
+if low &gt;= high {
+  return
+}
+
+pivot := nums[(low+high)/2]
+i, j := low, high
+nums[(low+high)/2], nums[j]  = nums[j], nums[(low+high)/2]
+for i &lt;= j {
+  for ;i &lt;= j &amp;&amp; nums[i] &lt; pivot;i++ {}
+  for ;i &lt;= j &amp;&amp; nums[j] &gt;= pivot; j-- {}
+  if i &lt; j {
+      nums[i], nums[j] = nums[j], nums[i]
+      i++
+      j--
+  }
+}
+nums[i], nums[high]  = nums[high], nums[i]
+partialMid(nums, low, i - 1)
+partialMid(nums, i + 1, high)
+}
+func partialLast(nums []int, low, high int) {// &#x6700;&#x540E;&#x4E00;&#x4E2A;&#x503C;&#x4F5C;&#x4E3A;pivot
+if low &gt;= high{
+  return
+}
+pivot := nums[high]
+i,j := low, high
+for i &lt; j{
+  for ;i &lt; j &amp;&amp; nums[i] &lt;= pivot; i++ {}
+  if i &lt; j {
+      nums[j] = nums[i]
+      j--
+  }
+  for ;i &lt; j &amp;&amp; nums[j] &gt;= pivot; j--{}
+  if i &lt; j {
+      nums[i] = nums[j]
+      i++
+  }
+}
+nums[i] = pivot
+partialLast(nums, low, i-1)
+partialLast(nums, i+1, high)
+}
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="shell&#x6392;&#x5E8F;"><a name="shell&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#shell&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>shell&#x6392;&#x5E8F;</h4>
+<p>&#x5C06;&#x6570;&#x7EC4;&#x5206;&#x4E3A;&#x591A;&#x4E2A;&#x5B50;&#x5E8F;&#x5217;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B50;&#x5E8F;&#x5217;&#x7528;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x6700;&#x5DEE;O(n^2)&#xFF0C;&#x5E73;&#x5747;O(n^1.5)&#xFF0C;&#x6700;&#x597D;O(n)&#xFF0C;&#x7A7A;&#x95F4;O(1) </p>
+<pre><code>// &#x5E0C;&#x5C14;&#x6392;&#x5E8F;
+func shellSort(nums []int) []int{
+    for gap := len(nums) / 2; gap &gt; 0; gap = gap / 2 {
+        for i := gap; i &lt; len(nums); i++ {
+            preIdx := i - gap;
+            curVal := nums[i]
+            for ; preIdx &gt;= 0 &amp;&amp; curVal &lt; nums[preIdx]; preIdx -= gap{
+                nums[preIdx + gap] = nums[preIdx]
+            }
+            nums[preIdx + gap] = curVal
+        }
+    }
+    return nums
+}
+</code></pre><h4 id="&#x5806;&#x6392;&#x5E8F;"><a name="&#x5806;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5806;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5806;&#x6392;&#x5E8F;</h4>
+<p>heap_sort, &#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x6700;&#x5DEE;O(nlog2^n)&#xFF0C;&#x5E73;&#x5747;O(nlog2^n)&#xFF0C;&#x6700;&#x597D;O(nlog2^n)&#xFF0C;&#x7A7A;&#x95F4;O(1)&#xFF0C;&#x9002;&#x5408;&#x4E8E;&#x5916;&#x6392;&#x5E8F;&#xFF0C;&#x5904;&#x7406;&#x6570;&#x636E;&#x96C6;&#x5927;&#x800C;&#x4E0D;&#x9002;&#x5408;&#x5728;&#x5185;&#x5B58;&#x6392;&#x5E8F;&#x7684;&#x60C5;&#x51B5;</p>
+<ul>
+<li>&#x7236;&#x7ED3;&#x70B9;&#x7684;&#x952E;&#x503C;&#x603B;&#x662F;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#xFF08;&#x5C0F;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#xFF09;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x952E;&#x503C;&#xFF1B;</li>
+<li>&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x5DE6;&#x5B50;&#x6811;&#x548C;&#x53F3;&#x5B50;&#x6811;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x5806;&#xFF08;&#x90FD;&#x662F;&#x6700;&#x5927;&#x5806;&#x6216;&#x6700;&#x5C0F;&#x5806;&#xFF09;&#xFF1B;</li>
+<li>&#x5806;&#x7684;&#x5B58;&#x50A8;&#x4E00;&#x822C;&#x662F;&#x7528;&#x6570;&#x7EC4;&#x5B58;&#x50A8;&#xFF0C;i&#x7ED3;&#x70B9;&#x7684;&#x7236;&#x8282;&#x70B9;&#x4E0B;&#x6807;(i-1)/2&#xFF0C;&#x5DE6;&#x53F3;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x4E0B;&#x6807;&#x4E3A;<code>2*i+1&#x548C;2*i+2</code></li>
+</ul>
+<pre><code>// &#x5806;&#x6392;&#x5E8F;
+func heapSort(nums []int) []int {
+    for i := len(nums)/2 - 1; i &gt;= 0; i-- { // &#x4ECE;&#x5012;&#x6570;&#x7B2C;&#x4E00;&#x4E2A;&#x975E;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF08;&#x7236;&#x8282;&#x70B9;&#xFF09;&#x5F00;&#x59CB;&#xFF0C;&#x6BCF;&#x6B21;&#x5C06;&#x6700;&#x5927;&#x503C;&#x653E;&#x5728;&#x6240;&#x6709;&#x7236;&#x8282;&#x70B9;&#x4E0A;
+        heaplify(nums, i, len(nums))
+    }
+
+    for i := len(nums) - 1; i &gt; 0; i-- { // &#x6BCF;&#x6B21;&#x5C06;&#x5806;&#x7684;&#x6700;&#x5927;&#x503C;&#x653E;&#x5728;&#x6700;&#x540E;&#xFF0C;&#x91CD;&#x65B0;&#x6784;&#x9020;&#x65B0;&#x7684;&#x5806;
+        nums[0], nums[i] = nums[i], nums[0]
+        heaplify(nums, 0, i)
+    }
+    return nums
+}
+func heaplify(nums []int, start, end int) { // &#x5C06;&#x6700;&#x5927;&#x503C;&#x653E;&#x5728;start&#x4F4D;&#x7F6E;&#x4E0A;
+    curIdx := start
+    for curIdx &lt; end {
+        left := 2 * curIdx + 1
+        right := 2 * curIdx + 2
+        if left &lt; end &amp;&amp; nums[left] &gt; nums[curIdx] &amp;&amp; (right &gt;= end || nums[left] &gt; nums[right]) {
+            nums[curIdx], nums[left] = nums[left], nums[curIdx]
+            curIdx = left
+        } else if right &lt; end &amp;&amp; nums[right] &gt; nums[curIdx] {
+            nums[curIdx], nums[right] = nums[right], nums[curIdx]
+            curIdx = right
+        }else {
+            break
+        }
+
+    }
+}
+</code></pre><h4 id="&#x5F52;&#x5E76;&#x6392;&#x5E8F;"><a name="&#x5F52;&#x5E76;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5F52;&#x5E76;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F52;&#x5E76;&#x6392;&#x5E8F;</h4>
+<p>merge sort, &#x9012;&#x5F52;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x7A33;&#x5B9A;&#xFF0C;&#x6700;&#x5DEE;O(nlog2^n)&#xFF0C;&#x5E73;&#x5747;O(nlog2^n)&#xFF0C;&#x6700;&#x597D;O(nlog2^n)&#xFF0C;&#x7A7A;&#x95F4;O(1)</p>
+<p><img src="evernotecid://BE224651-30A6-49A9-8AD9-C6C3F1ABBBF8/appyinxiangcom/445930/ENResource/p2778" alt="d85620247da35b84fda5daf1baae2a7d.png"></p>
+<h2 id="&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;"><a name="&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;" class="anchor-navigation-ex-anchor" href="#&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x6392;&#x5E8F;&#x65B9;&#x6CD5;</th>
+<th>&#x6700;&#x5DEE;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x5E73;&#x5747;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x6700;&#x597D;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A33;&#x5B9A;&#x6027;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x63D2;&#x5165;&#x6392;&#x5E8F;</td>
+<td><code>O(n^2)</code></td>
+<td><code>O(n^2)</code></td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td>&#x5192;&#x6CE1;&#x6392;&#x5E8F;</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td>&#x9009;&#x62E9;&#x6392;&#x5E8F;</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(1)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</td>
+<td>O(n^2)</td>
+<td>O(nlog2^n)</td>
+<td>O(nlog2^n)</td>
+<td>O(nlog2^n)</td>
+<td>&#x4E0D;&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td>&#x5806;&#x6392;&#x5E8F;</td>
+<td>O(nlog2^n)</td>
+<td>O(nlog2^n)</td>
+<td>O(nlog2^n)</td>
+<td>O(1)</td>
+<td>&#x4E0D;&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td>&#x5F52;&#x5E76;&#x6392;&#x5E8F;</td>
+<td>O(nlog2^n)</td>
+<td>O(nlog2^n)</td>
+<td>O(nlog2^n)</td>
+<td>O(1)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td>shell&#x6392;&#x5E8F;</td>
+<td>O(n^2)</td>
+<td>O(n^1.5)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>&#x4E0D;&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td>&#x57FA;&#x6392;&#x5E8F;</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+</tbody>
+</table>
+<p><em>&#x6CE8;&#xFF1A;&#x7A33;&#x5B9A;&#x6027;&#x6307;&#xFF0C;&#x5982;&#x679C;&#x5141;&#x8BB8;&#x8F93;&#x5165;&#x7684;&#x5173;&#x952E;&#x7801;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x7B97;&#x6CD5;&#x4E0D;&#x6539;&#x53D8;&#x5177;&#x6709;&#x76F8;&#x540C;&#x5173;&#x952E;&#x7801;&#x8BB0;&#x5F55;&#x7684;&#x539F;&#x59CB;&#x8F93;&#x5165;&#x987A;&#x5E8F;&#xFF0C;&#x8FD9;&#x79CD;&#x7B97;&#x6CD5;&#x79F0;&#x4E3A;&#x7A33;&#x5B9A;&#x7684;&#x3002;</em></p>
+<p><img src="evernotecid://BE224651-30A6-49A9-8AD9-C6C3F1ABBBF8/appyinxiangcom/445930/ENResource/p2779" alt="eb78bd56601d10f094fa790773a0fef0.png"></p>
+<p>&#x603B;&#x7ED3;&#xFF1A;</p>
+<ul>
+<li>&#x6309;&#x5E73;&#x5747;&#x65F6;&#x95F4;&#x6027;&#x80FD;&#xFF1A;<ul>
+<li>O(n^2)&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x3001;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#x3001;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF1B;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x5728;&#x57FA;&#x672C;&#x6709;&#x5E8F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5FEB;</li>
+<li>O(nlog2^n)&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x3001;&#x5806;&#x6392;&#x5E8F;&#x3001;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#xFF1B;&#x5176;&#x4E2D;&#x5FEB;&#x6392;&#x76EE;&#x524D;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6700;&#x5FEB;&#x7684;&#x4E00;&#x79CD;&#x6392;&#x5E8F;&#xFF1B;&#x540E;&#x8005;&#x7684;&#x8BDD;&#xFF0C;n&#x8F83;&#x5927;&#x65F6;&#xFF0C;&#x5F52;&#x5E76;&#x66F4;&#x5FEB;</li>
+<li>O(n)&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x57FA;&#x6392;&#x5E8F;</li>
+</ul>
+</li>
+<li>&#x6309;&#x7A7A;&#x95F4;&#x6027;&#x80FD;&#xFF1A;<ul>
+<li>O(n)&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x3001;&#x57FA;&#x6392;&#x5E8F;</li>
+<li>O(log2^n)&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x5FEB;&#x901F;&#x6392;&#x5E8F;</li>
+<li>O(1)&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x3001;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#x3001;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#x3001;&#x5806;&#x6392;&#x5E8F;</li>
+</ul>
+</li>
+</ul>
+<h1 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h1>
+<ul>
+<li>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x52A8;&#x56FE;&#x56FE;&#x89E3;&#xFF1A;cnblogs.com/onepixel/p/7674659.html</li>
+</ul>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; ZengMenglu 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x4E66;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF1A;
-2020-01-06 07:50:12
+2020-03-20 07:12:31
 </span></footer>
                                 
                                 </section>
@@ -805,7 +1087,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"排序","level":"2.3.4","depth":2,"next":{"title":"递归","level":"2.3.5","depth":2,"path":"cs/basic/algorithm/recursion.md","ref":"cs/basic/algorithm/recursion.md","articles":[]},"previous":{"title":"字符串","level":"2.3.3","depth":2,"path":"cs/basic/algorithm/string.md","ref":"cs/basic/algorithm/string.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-chapter-fold","code","-search","search-pro","github","splitter","tbfed-pagefooter","sharing","-highlight","styles-less","expandable-chapters-small","-toggle-chapters","-lunr","-fontsettings","ancre-navigation","-multipart","pageview-count","mermaid","mermaid-gb3"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ZengMenglu 2020","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/zengmenglu"},"styles-less":{},"splitter":{},"search-pro":{},"mermaid":{},"code":{"copyButtons":true},"mermaid-gb3":{},"back-to-top-button":{},"pageview-count":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zengmenglu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zengmenglu Zone","language":"zh-hans","output.name":"site","links":{"sidebar":{"首页":"http://zengmenglu.github.io"}},"gitbook":"3.2.3","description":""},"file":{"path":"cs/basic/algorithm/sort.md","mtime":"2020-01-05T23:50:12.560Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-19T22:43:59.679Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"排序","level":"2.3.4","depth":2,"next":{"title":"递归","level":"2.3.5","depth":2,"path":"cs/basic/algorithm/recursion.md","ref":"cs/basic/algorithm/recursion.md","articles":[]},"previous":{"title":"字符串","level":"2.3.3","depth":2,"path":"cs/basic/algorithm/string.md","ref":"cs/basic/algorithm/string.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-chapter-fold","code","-search","search-pro","github","splitter","tbfed-pagefooter","sharing","-highlight","styles-less","expandable-chapters-small","-toggle-chapters","-lunr","-fontsettings","ancre-navigation","-multipart","pageview-count","mermaid","mermaid-gb3"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ZengMenglu 2020","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/zengmenglu"},"styles-less":{},"splitter":{},"search-pro":{},"mermaid":{},"code":{"copyButtons":true},"mermaid-gb3":{},"back-to-top-button":{},"pageview-count":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zengmenglu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zengmenglu Zone","language":"zh-hans","output.name":"site","links":{"sidebar":{"首页":"http://zengmenglu.github.io"}},"gitbook":"3.2.3","description":""},"file":{"path":"cs/basic/algorithm/sort.md","mtime":"2020-03-19T23:12:31.422Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-19T23:43:41.285Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
